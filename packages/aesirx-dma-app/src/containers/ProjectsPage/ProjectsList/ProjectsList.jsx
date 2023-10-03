@@ -12,7 +12,7 @@ import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
-import { Spinner, Table, TableBar } from 'aesirx-uikit';
+import { Spinner, Table, TableBar, Thumb } from 'aesirx-uikit';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
 
@@ -64,12 +64,22 @@ const ProjectsList = observer(
       this.listViewModel.isList = !this.listViewModel.isList;
     };
 
-    _handleSort = async (data) => {
+    _handleSort = (data) => {
       this.handleSort(data);
     };
 
+    _handleDeleteProject = (data) => {
+      // this.handleDetele();
+      // console.log(data);
+    };
+
+    _handleShowColumns = (data) => {
+      // console.log(typeof this.handleColumns);
+      this.handleColumns(data);
+    };
+
     render() {
-      const { tableStatus, projects, pagination, isDesc } = this.listViewModel;
+      const { tableStatus, projects, pagination, isDesc, isList, columns } = this.listViewModel;
       const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
@@ -158,7 +168,9 @@ const ProjectsList = observer(
             tableRowHeader={tableRowHeader}
             setGlobalFilters={this.setGlobalFilters}
             onAction={this._handleList}
-            isList={this.listViewModel.isList}
+            isList={isList}
+            onDeleteItem={this._handleDeleteProject}
+            onShowColumns={this._handleShowColumns}
           />
           {projects ? (
             <>
@@ -166,12 +178,13 @@ const ProjectsList = observer(
                 <Table
                   data={projects}
                   columns={tableRowHeader}
+                  colShow={columns}
                   pagination={pagination}
                   isDesc={isDesc}
                   onSort={this._handleSort}
                 />
               ) : (
-                'ui thumb'
+                <Thumb data={projects} />
               )}
             </>
           ) : (

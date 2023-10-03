@@ -31,6 +31,8 @@ class ProjectsListViewModel {
 
   isDesc = false;
 
+  columns = [];
+
   constructor(projectStore) {
     makeAutoObservable(this);
     this.projectStore = projectStore;
@@ -55,6 +57,9 @@ class ProjectsListViewModel {
     this.dataFilter = null;
     this.isList = true;
     this.pageSize = 5;
+    this.sort = {};
+    this.isDesc = false;
+    this.columns = [];
   };
 
   refreshTableProjectList = () => {
@@ -126,6 +131,10 @@ class ProjectsListViewModel {
       this.pageSize,
       sort
     );
+  };
+
+  showColumns = (data) => {
+    this.columns.push(data);
   };
 
   callbackOnErrorHander = (error) => {

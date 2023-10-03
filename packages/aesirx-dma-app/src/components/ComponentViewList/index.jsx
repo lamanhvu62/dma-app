@@ -78,6 +78,14 @@ class ComponentViewList extends Component {
     this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
   };
 
+  handleDetele = () => {
+    this.listViewModel.deleteProjects();
+  };
+
+  handleColumns = (data) => {
+    this.listViewModel.showColumns(data);
+  };
+
   setGlobalFilters = (filters) => {
     if (this.listViewModel.searchFunction !== undefined) {
       const finalDataFilter = {
