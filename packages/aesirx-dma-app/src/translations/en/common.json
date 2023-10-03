@@ -214,5 +214,9 @@
   "txt_content":"Content",
   "txt_disconnect":"Disconnect",
   "txt_failed": "Failed",
-  "txt_bulk_disconnect": "Bulk Disconnect"
+  "txt_bulk_disconnect": "Bulk Disconnect",
+  "txt_processing": "In Progress",
+  "txt_success": "Success",
+  "txt_pedding": "Pendding",
+  "txt-draft": "Draft"
 }

@@ -212,5 +212,9 @@
   "txt_content":"Nội dung",
   "txt_disconnect":"Ngắt kết nối",
   "txt_failed": "Không thành công",
-  "txt_bulk_disconnect": "Ngắt kết nối hàng loạt"
+  "txt_bulk_disconnect": "Ngắt kết nối hàng loạt",
+  "txt_processing": "Đang tiến hành",
+  "txt_success": "Thành công",
+  "txt_pedding": "Đang xử lý",
+  "txt-draft": "Bản nháp"
 }

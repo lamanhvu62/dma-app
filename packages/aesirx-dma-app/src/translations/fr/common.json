@@ -211,6 +211,10 @@
 "txt_content":"Contenu",
 "txt_disconnect":"Déconnecter",
 "txt_failed": "Échec",
-"txt_bulk_disconnect": "Déconnexion groupée"
+"txt_bulk_disconnect": "Déconnexion groupée",
+"txt_processing": "En cours",
+"txt_success": "Succès",
+"txt_pedding": "En attente",
+"txt-draft": "Brouillon"
 
 }
